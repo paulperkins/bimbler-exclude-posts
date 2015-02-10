@@ -68,6 +68,7 @@ class Bimbler_Exclude_Posts {
 	 */
 	function exclude_category( $query ) {
 
+		// Only exclude posts on the home page.
 		if ( $query->is_home() && $query->is_main_query() ) {
 			// EDIT THIS to suit the list of categories you'd like to exlude.
 			$query->set( 'cat', '-50,-49,-75,-79' ); // Don't show ride posts or internal posts. Exclude plugin posts.
